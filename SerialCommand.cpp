@@ -26,11 +26,11 @@
 /**
  * Constructor makes sure some things are set.
  */
-SerialCommand::SerialCommand()
+SerialCommand::SerialCommand(char defaultTermChar /* = '\n' */)
   : commandList(NULL),
     commandCount(0),
     defaultHandler(NULL),
-    term('\n'),           // default terminator for commands, newline character
+    term(defaultTermChar),   // default terminator for commands, newline character
     last(NULL)
 {
   strcpy(delim, " "); // strtok_r needs a null-terminated string
